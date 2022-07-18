@@ -1,0 +1,46 @@
+<div style="background-color: gray;padding-left: 100px;padding-top:50px;">
+<div style="color: purple; text-align: center;">{{errorMsg}}</div>
+
+<div class="fields-container">
+  <mat-form-field>
+    <input matInput [(ngModel)]='username' placeholder="Enter you Name" required="required">
+  </mat-form-field>
+</div>
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeTogle matTreeNodePadding>
+    <button mat-icon-button></button>
+    <mat-checkbox class="checklist-leaf-node"
+                  [checked]="checklistSelection.isSelected(node)"
+                  (change)="todoLeafItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasNoContent" matTreeNodePadding>
+    <button mat-icon-button></button>
+    <mat-form-field>
+      <input matInput #itemValue placeholder="New item...">
+    </mat-form-field>
+    <button mat-button (click)="saveNode(node, itemValue.value)">Save</button>
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+    <button mat-icon-button matTreeNodeToggle
+            [attr.aria-label]="'toggle ' + node.filename">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    <mat-checkbox [checked]="descendantsAllSelected(node)"
+                  [indeterminate]="descendantsPartiallySelected(node)"
+                  (change)="todoItemSelectionToggle(node)">{{node.label}}</mat-checkbox>
+  
+  </mat-tree-node>
+</mat-tree>
+<mat-checkbox id="termsCbx"  [(ngModel)]='termsConditions' class="example-margin">Agree to Terms</mat-checkbox>
+<br/>
+  <div class="example-button-row">
+    <button (click)="SaveInfo()" mat-raised-button color="primary">Save</button>
+  </div>
+</div>
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
