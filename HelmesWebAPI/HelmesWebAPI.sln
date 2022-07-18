@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelmesWebAPI", "HelmesWebAPI\HelmesWebAPI.csproj", "{64E7E508-01AD-404F-ABB7-BEB5C7A12B0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64E7E508-01AD-404F-ABB7-BEB5C7A12B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E7E508-01AD-404F-ABB7-BEB5C7A12B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E7E508-01AD-404F-ABB7-BEB5C7A12B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E7E508-01AD-404F-ABB7-BEB5C7A12B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A1B80A2-3FA0-494D-BC80-1E19B6BF32AD}
+	EndGlobalSection
+EndGlobal
